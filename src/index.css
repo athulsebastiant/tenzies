@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("/src/images/black-dice-png-5.png");
+  background-image: url("/images/black-dice-png-5.png");
   background-repeat: space;
   background-size: auto 110px;
   
