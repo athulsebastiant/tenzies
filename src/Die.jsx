@@ -1,6 +1,6 @@
 export default function Die(props) {
   const styles = {
-    backgroundImage: `url('/src/assets/die-${props.value}.png')`,
+    backgroundImage: `url('/src/images/die-${props.value}.png')`,
     backgroundSize: "contain",
     boxShadow: props.isHeld ? "inset 0 0 0 3px #0B8043" : "none",
   };
