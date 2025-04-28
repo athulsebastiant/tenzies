@@ -9,7 +9,7 @@ export default function App() {
   const [rollCounter, setRollCounter] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [time, setTime] = useState(0);
-
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
     let intervalId;
 
@@ -122,12 +122,17 @@ export default function App() {
     />
   ));
 
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <main>
       {gameWon && (
         <Confetti
-          width={10000}
-          numberOfPieces={900}
+          width={windowWidth}
+          numberOfPieces={500}
           gravity={4}
           initialVelocityY={200}
           friction={0.9}
